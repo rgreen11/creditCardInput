@@ -11,19 +11,19 @@ export default class CCInput extends React.Component{
     }
 
 handleCardType = (e) => {
-    let input = e.target.value;
-    let {output, card} = this.state;
-    let startIndex = input[0];
-    this.setState({output: input})
-    if(startIndex === 4){
-        this.setState({card: 'Visa Card'})
-        return;
-    } else if (startIndex === 5){
-        this.setState({card: 'Master Card'})
-        return;
-        }
+    const input = e.target.value;
+    let card = '';
+    let firstInt = parseInt(input[0])
 
+    if(firstInt === 4){
+        card = 'Visa Card';
+        console.log('input 2', input[0]);
+    } else if (firstInt === 5){
+        card = 'Master Card';
+    } 
 
+        this.setState({output: input, card:card});
+       
 }
 
 
@@ -31,7 +31,7 @@ handleCardType = (e) => {
 
     render(){
         const {output, card} = this.state
-        console.log(card)
+        console.log('card', card)
     return( <>
                 <h1>Card Type: {card}</h1>
                 <input 
