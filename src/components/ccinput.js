@@ -9,7 +9,7 @@ export default class CCInput extends React.Component{
             card: '',
         }
     }
-
+// handle delete
 handleCardType = (e) => {
     const input = e.target.value;
     let card = '';
